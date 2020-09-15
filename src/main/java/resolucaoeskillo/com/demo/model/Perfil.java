@@ -26,6 +26,10 @@ public class Perfil {
     private boolean visibilidadePerfil;
     private Fotografia fotografia;
 
+
+
+    // array das classes de negocio:
+
     private List<Experiencia> experiencias = new ArrayList<>();
     private List<Telefone> telefones = new ArrayList<>();
     private List<Formacao> formacoes = new ArrayList<>();

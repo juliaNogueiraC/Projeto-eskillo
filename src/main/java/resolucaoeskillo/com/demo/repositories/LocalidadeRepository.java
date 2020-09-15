@@ -1,11 +1,17 @@
 package resolucaoeskillo.com.demo.repositories;
-import java.util.list ;
-import java.util.Collections;
+
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import resolucaoeskillo.com.demo.model.Localidade;
 
 public class LocalidadeRepository {
   private List<Localidade> repository = new ArrayList<>();
   
+
+
+ 
 
 
   public void adiciona(final Localidade localidade) {
@@ -13,6 +19,8 @@ public class LocalidadeRepository {
         repository.add(localidade);
     }
 }
+
+
 
 public void atualiza(final Localidade localidade) {
   if (repository.contains(localidade)) {
@@ -29,15 +37,21 @@ public void remove(final Localidade localidade) {
   }
 }
 
+
+
 public Localidade obtem(Long id) {
-  Localidade localidadeEncontrada = null;
+  Localidade localEncontrado = null;
   for (Localidade localidade:repository) {
       if (localidade.getId().equals(id)) {
-          localidadeEncontrada = localidade;
+          localEncontrado = localidade;
       }
   }
-  return localidadeEncontrada;
+  return localEncontrado;
 }
+
+
+
+
 
 public List<Localidade> lista() {
   return Collections.unmodifiableList(repository);

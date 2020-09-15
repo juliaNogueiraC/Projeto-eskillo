@@ -1,8 +1,6 @@
 package resolucaoeskillo.com.demo.model;
 
-import java.io.Serializable;
-
-public class AreaDeEstudo implements Serializable {
+public class AreaDeEstudo /* implements Serializable */ {
     // 1 atributos basicos 
   private Long id;
   private String descricao;
@@ -22,7 +20,11 @@ public AreaDeEstudo(Long id , String descricao){
 
 
 
-} //3 getters e setts
+}
+
+
+
+//3 getters e setts
 
 public Long getId() {
     return id;
@@ -40,6 +42,10 @@ public void setDescricao(String descricao) {
     this.descricao = descricao;
 }
 
+
+
+
+// 4 equals e hashcode 
 @Override
 public int hashCode() {
     final int prime = 31;
@@ -51,7 +57,7 @@ public int hashCode() {
 
 
 
-// 4 equals e hashcode 
+
 @Override
 public boolean equals(Object obj) {
     if (this == obj)
@@ -78,15 +84,16 @@ public boolean equals(Object obj) {
 // to String 
 @Override
 public String toString() {
-    return "areaDeEstudo [descricao=" + descricao + ", id=" + id + "]";
+    return "areaDeEstudo [descricao=" + descricao + ", id= ( "+ id +") ]";
 }
 
   
 
 
-  // 5 serializable : 
-   // classe => arq binario (obj -> sequencia de bytes -> arquivo binario )
-  // e pode fazer o inverso 
+  /* 5 serializable : 
+    classe => arq binario (obj -> sequencia de bytes -> arquivo binario )
+   e pode fazer o inverso 
+   */
   
 
     

@@ -5,12 +5,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data @AllArgsConstructor @NoArgsConstructor
-public class tipoFormacao {
+public class TipoFormacao {
     
-    Private Long id;
-    Private String
+    private Long id;
+    private String;
 
-    /**@Override
+   /*
+    @Override
     public String toString() {
         return "tipoFormacao [Long=" + Long + ", String=" + String + "]";
     }descricao;
