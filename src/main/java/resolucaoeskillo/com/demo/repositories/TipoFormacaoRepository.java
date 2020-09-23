@@ -1,7 +1,12 @@
 package resolucaoeskillo.com.demo.repositories;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
 import resolucaoeskillo.com.demo.model.TipoFormacao;
- 
-public interface TipoFormacaoRepository {
+
+@Repository
+// preciso informar que ela é um repositorio
+public interface TipoFormacaoRepository extends JpaRepository<TipoFormacao, Long > {
     
 }

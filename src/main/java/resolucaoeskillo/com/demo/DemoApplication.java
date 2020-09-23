@@ -24,7 +24,17 @@ public class DemoApplication {
 
 	 @Override
 	 public void run(String... args)throws Exception {
-		AreaDeEstudo area1 = new AreaDeEstudo();
+
+
+
+
+
+
+
+		
+
+
+	/** 	AreaDeEstudo area1 = new AreaDeEstudo();
 		area1.setId(1l);
 		area1.setDescricao("Engenharia de Software");
 		System.out.println(area1.toString());
@@ -59,5 +69,6 @@ public class DemoApplication {
 
 		System.out.println(perfilAnderson.toString());
 
-	}
+	} **/
+}
 }
