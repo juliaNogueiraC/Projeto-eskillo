@@ -8,5 +8,10 @@ import resolucaoeskillo.com.demo.model.TipoFormacao;
 @Repository
 // preciso informar que ela é um repositorio
 public interface TipoFormacaoRepository extends JpaRepository<TipoFormacao, Long > {
-    
+
+
+   
+    // o jpa repository serve para vc implementar as funcionalidades basicas de um repositorio 
 }
+
+
