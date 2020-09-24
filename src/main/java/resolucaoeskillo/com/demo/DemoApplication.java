@@ -1,33 +1,27 @@
 package resolucaoeskillo.com.demo;
 
-import java.util.Calendar;
-
-import org.springframework.boot.CommandLineRunner;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import resolucaoeskillo.com.demo.model.Experiencia;
-import resolucaoeskillo.com.demo.model.AreaDeEstudo;
-import resolucaoeskillo.com.demo.model.TipoFormacao;
-import resolucaoeskillo.com.demo.model.TipoTelefone;
-import resolucaoeskillo.com.demo.model.Perfil;
-import resolucaoeskillo.com.demo.model.Telefone;
+import resolucaoeskillo.com.demo.services.TipoFormacaoService;
 
 @SpringBootApplication
 public class DemoApplication {
 
+@Autowired
+private TipoFormacaoService service;
+
+
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
 	}
-
-
-
 	 @Override
 	 public void run(String... args)throws Exception {
+	 
+		System.out.println("qut de registrod:" + service.lista()).size());// listagem do service 
 
-
-
-
+// size é o tamanho dac lista . aqui ele mostra a quantidade e faz a listagem 
 
 
 
