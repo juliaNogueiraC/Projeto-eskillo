@@ -44,12 +44,17 @@ public class TipoFormacaoService {
 
   }
 
-  public void remove(TipoFormacao tipoFormacao){
+  /**public void remove(TipoFormacao tipoFormacao){
 
 
     repository.delete(tipoFormacao);
   }
 
+  ou 
+**/
+public void delete(Long id){
+   repository.deleteById(id);
+}
  
 
   
