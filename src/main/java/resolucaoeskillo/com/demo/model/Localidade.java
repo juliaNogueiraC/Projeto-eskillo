@@ -12,6 +12,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 
+
 @Entity
 @Data @NoArgsConstructor @AllArgsConstructor
 public class Localidade {
@@ -30,6 +31,14 @@ public class Localidade {
     @Override
     public String toString() {
         return "Localidade [id=" + id + ", nome=" + nome + ", uf=" + uf + "]";
+    
+
+        /**
+    @Override
+    public String toString() {
+        return nome + "-" + uf + " (" + id + ")";
+         **/
     }
+
     
 }

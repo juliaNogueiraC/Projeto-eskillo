@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 
 
 @Entity
-@Table(name ="TipoFormacao")  // cria uma tabela no database com esse nome
+//@Table(name ="TipoFormacao")  // cria uma tabela no database com esse nome
 @Data @AllArgsConstructor @NoArgsConstructor
 public class TipoFormacao {
     
@@ -22,11 +22,10 @@ public class TipoFormacao {
     @Id// define que aqui será a indetificação do tipoFormacao(da classe ne) no databse
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     // aqui ele cirar e gerencia esses atributos da entidade mapeado no database 
-    
-   
     @Column(name = "idTipoFormacao")
     private Long id;
 
+    
     @EqualsAndHashCode.Exclude
     private String descricao;
 

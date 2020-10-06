@@ -1,5 +1,15 @@
 package resolucaoeskillo.com.demo.repositories;
 
+import resolucaoeskillo.com.demo.model.Localidade;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface LocalidadeRepository extends JpaRepository<Localidade, Long> {
+    
+}
+/** 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -58,3 +68,4 @@ public List<Localidade> lista() {
 }
 
 }
+**/
