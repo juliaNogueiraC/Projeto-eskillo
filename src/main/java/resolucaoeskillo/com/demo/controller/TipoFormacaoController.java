@@ -25,13 +25,12 @@ public class TipoFormacaoController {
 
 
 
-
-
 @GetMapping("/tipos-de-formacao")
 public ResponseEntity<?> lista() {
     List<TipoFormacao> lista = service.lista();
     return ResponseEntity.status(HttpStatus.OK).body(lista);
 }
+
 
 @GetMapping("/tipos-de-formacao/{id}")
 public ResponseEntity<?> get(@PathVariable Long id) {
@@ -42,11 +41,28 @@ public ResponseEntity<?> get(@PathVariable Long id) {
     return ResponseEntity.ok().body(tipoFormacao);
 }
 
+
+
 @PostMapping("/tipos-de-formacao")
 public ResponseEntity<?> post(@RequestBody TipoFormacao tipoFormacao) {
     TipoFormacao tipo = service.adiciona(tipoFormacao);
     return ResponseEntity.status(HttpStatus.CREATED).body(tipo);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /** 
   @GetMapping("/tipos-formacao")
  Notação para mapeamento de 

@@ -71,4 +71,7 @@ public class Perfil {
     @OneToMany
     @JoinColumn(name = "idPerfil")
     private List<Competencia> competencias = new ArrayList<>();
+
+
+
 }
