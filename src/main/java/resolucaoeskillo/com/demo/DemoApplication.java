@@ -46,7 +46,7 @@ public class DemoApplication implements CommandLineRunner {
 		localidade = new Localidade(null, "Parnaíba", "PI");
 		localidadeService.adiciona(localidade);
 		localidade = new Localidade(null, "Recife", "PE");
-		çocalidade  = localidadeService.adiciona(localidade);
+		localidade  = localidadeService.adiciona(localidade);
 
 		TipoFormacao tipoFormacao = new TipoFormacao(null, "Bacharelado");
 		tipoFormacaoService.adiciona(tipoFormacao);

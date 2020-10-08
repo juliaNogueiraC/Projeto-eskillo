@@ -2,8 +2,8 @@ package resolucaoeskillo.com.demo.controller;
 
 import java.util.List;
 
-import resolucaoeskillo.com.demo.model.AreaDeEstudo;
-import resolucaoeskillo.com.demo.services.AreaDeEstudoService;
+import resolucaoeskillo.com.demo.model.TipoCompetencia;
+import resolucaoeskillo.com.demo.services.TipoCompetenciaService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,46 +17,46 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class AreaDeEstudoController {
+public class TipoCompetenciaController {
 
     @Autowired  
-    private AreaDeEstudoService service;
+    private TipoCompetenciaService service;
 
-    @GetMapping("/areas-de-estudo")
+    @GetMapping("/tipos-de-competencia")
     public ResponseEntity<?> lista() {
-        List<AreaDeEstudo> lista = service.lista();
+        List<TipoCompetencia> lista = service.lista();
         return ResponseEntity.status(HttpStatus.OK).body(lista);
     }
 
-    @GetMapping("/areas-de-estudo/{id}")
+    @GetMapping("/tipos-de-competencia/{id}")
     public ResponseEntity<?> get(@PathVariable Long id) {
-        AreaDeEstudo areaDeEstudo = service.busca(id);
-        if (areaDeEstudo == null) {
+        TipoCompetencia tipoCompetencia = service.busca(id);
+        if (tipoCompetencia == null) {
             return ResponseEntity.notFound().build();
         }
-        return ResponseEntity.ok().body(areaDeEstudo);
+        return ResponseEntity.ok().body(tipoCompetencia);
     }
 
-    @PostMapping("/areas-de-estudo")
-    public ResponseEntity<?> post(@RequestBody AreaDeEstudo areaEstudo) {
-        AreaDeEstudo area = service.adiciona(areaDeEstudo);
-        return ResponseEntity.status(HttpStatus.CREATED).body(area);
+    @PostMapping("/tipos-de-competencia")
+    public ResponseEntity<?> post(@RequestBody TipoCompetencia tipoCompetencia) {
+        TipoCompetencia tipo = service.adiciona(tipoCompetencia);
+        return ResponseEntity.status(HttpStatus.CREATED).body(tipo);
     }
 
-    @PutMapping("/areas-de-estudo")
-    public ResponseEntity<?> put(@RequestBody AreaDeEstudo areaEstudo) {
-        AreaDeEstudo area = service.busca(areaDeEstudo.getId());
-        if (area == null) {
+    @PutMapping("/tipos-de-competencia")
+    public ResponseEntity<?> put(@RequestBody TipoCompetencia tipoCompetencia) {
+        TipoCompetencia tipo = service.busca(tipoCompetencia.getId());
+        if (tipo == null) {
             return ResponseEntity.notFound().build();
         }
-        AreaDeEstudo retorno = service.atualiza(areaDeEstudo);
+        TipoCompetencia retorno = service.atualiza(tipoCompetencia);
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(retorno);
     }
     
-    @DeleteMapping("/areas-de-estudo/{id}")
+    @DeleteMapping("/tipos-de-competencia/{id}")
     public ResponseEntity<?> delete(@PathVariable Long id) {
-        AreaDeEstudo area = service.busca(id);
-        if (area == null) {
+        TipoCompetencia tipo = service.busca(id);
+        if (tipo == null) {
             return ResponseEntity.notFound().build();
         }
         service.remove(id);
