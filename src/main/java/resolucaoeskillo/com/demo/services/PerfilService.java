@@ -1,6 +1,7 @@
 package resolucaoeskillo.com.demo.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,8 +11,8 @@ import resolucaoeskillo.com.demo.repositories.PerfilRepository;
 
 @Service
 public class PerfilService {
-
-    @Autowired
+    
+@Autowired
     private PerfilRepository repository;
 
     public List<Perfil>lista(){
@@ -19,9 +20,30 @@ public class PerfilService {
 
     }
 
-    public Perfil add(Perfil perfil){
+
+
+    public Perfil busca(Long id){
+     Optional<Perfil> perfil  = repository.findById(id);
+     return perfil.orElse(null);
+
+
+    }
+
+
+
+    public Perfil adiciona(Perfil perfil){
         perfil.setId(null);
       return  repository.save(perfil);
     }
     
+
+    public Perfil atualiza(Perfil perfil){
+        return repository.save(perfil);
+
+    }
+
+    public void remove(Long id){
+            repository.deleteById(id);
+
+    }
 }
