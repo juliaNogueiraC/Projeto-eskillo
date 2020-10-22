@@ -1,11 +1,12 @@
 package resolucaoeskillo.com.demo.repositories;
 
-import resolucaoeskillo.com.demo.model.Curso;
+import resolucaoeskillo.com.demo.model.Formacao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CursoRepository extends JpaRepository<Curso, Long> {
+public interface FormacaoRepository extends JpaRepository<Formacao, Long> {
     
 }
+

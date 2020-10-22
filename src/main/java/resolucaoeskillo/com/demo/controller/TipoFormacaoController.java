@@ -3,6 +3,8 @@ package resolucaoeskillo.com.demo.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -50,7 +52,27 @@ public ResponseEntity<?> post(@RequestBody TipoFormacao tipoFormacao) {
 }
 
 
+@PutMapping("/tipos-de-formacao")
+public ResponseEntity<?> put(@RequestBody TipoFormacao tipoFormacao) {
+    TipoFormacao tipo = service.busca(tipoFormacao.getId());
+    if (tipo == null) {
+        return ResponseEntity.notFound().build();
+    }
+    TipoFormacao retorno = service.atualiza(tipoFormacao);
+    return ResponseEntity.status(HttpStatus.ACCEPTED).body(retorno);
+}
 
+@DeleteMapping("/tipos-de-formacao/{id}")
+public ResponseEntity<?> delete(@PathVariable Long id) {
+    TipoFormacao tipo = service.busca(id);
+    if (tipo == null) {
+        return ResponseEntity.notFound().build();
+    }
+    service.remove(id);
+    return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+}
+
+}
 
 
 
