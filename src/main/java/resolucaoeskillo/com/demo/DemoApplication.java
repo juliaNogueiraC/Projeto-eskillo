@@ -45,7 +45,7 @@ public class EskilloApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-
+/*
 		Localidade localidade = new Localidade(null, "Teresina", "PI");
 		localidadeService.adiciona(localidade);
 		localidade = new Localidade(null, "Parnaíba", "PI");
