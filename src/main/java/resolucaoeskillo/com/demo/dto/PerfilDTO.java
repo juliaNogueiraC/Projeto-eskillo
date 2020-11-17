@@ -1,6 +1,7 @@
 package resolucaoeskillo.com.demo.dto;
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import  resolucaoeskillo.com.demo.model.Localidade;
 
 import lombok.Data;

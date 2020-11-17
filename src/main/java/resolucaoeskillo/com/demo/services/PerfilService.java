@@ -21,7 +21,7 @@ import resolucaoeskillo.com.demo.repositories.TelefoneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Service
 public class PerfilService {
@@ -44,6 +44,9 @@ public class PerfilService {
     @Autowired
     private TelefoneRepository telefoneRepository;
 
+    @Autowired
+    private BCryptPasswordEncoder passwordEncoder;
+    
     public List<Perfil> lista() {
         return repository.findAll();
     }
